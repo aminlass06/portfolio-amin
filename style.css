@@ -994,3 +994,153 @@ footer {
   cursor: pointer;
   pointer-events: auto;
 }
+
+/* Catégories de projets */
+.project-categories {
+  display: grid;
+  gap: 18px;
+}
+
+.project-category {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #f5f5f7;
+}
+
+.project-category summary {
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.project-category summary::-webkit-details-marker {
+  display: none;
+}
+
+.category-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.category-count {
+  margin-left: auto;
+  color: var(--grey);
+  font-size: 12px;
+}
+
+.project-category summary::after {
+  content: "+";
+  width: 34px;
+  height: 34px;
+  margin-left: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  font-size: 22px;
+}
+
+.project-category[open] summary::after {
+  content: "−";
+}
+
+.project-category[open] summary {
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Cartes plus petites : 4 par ligne sur ordinateur */
+.category-grid {
+  padding: 0 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 18px;
+}
+
+.category-grid .project {
+  min-width: 0;
+}
+
+.category-grid .project-image-wrap {
+  border-radius: 16px;
+}
+
+.category-grid .meta {
+  padding-top: 13px;
+}
+
+.category-grid .meta h3 {
+  font-size: 16px;
+  line-height: 1.15;
+}
+
+.category-grid .meta p {
+  font-size: 11px;
+}
+
+/* Tablette : 3 cartes par ligne */
+@media (max-width: 1050px) {
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Téléphone : 2 cartes par ligne */
+@media (max-width: 640px) {
+  .project-categories {
+    gap: 12px;
+  }
+
+  .project-category {
+    border-radius: 17px;
+  }
+
+  .project-category summary {
+    padding: 18px 16px;
+  }
+
+  .category-name {
+    font-size: 16px;
+  }
+
+  .category-count {
+    font-size: 10px;
+  }
+
+  .project-category summary::after {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  .project-category[open] summary {
+    margin-bottom: 16px;
+  }
+
+  .category-grid {
+    padding: 0 14px 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+
+  .category-grid .meta {
+    padding-top: 9px;
+  }
+
+  .category-grid .meta h3 {
+    font-size: 13px;
+  }
+
+  .category-grid .meta p {
+    font-size: 10px;
+  }
+
+  .category-grid .meta > span {
+    font-size: 10px;
+  }
+}
