@@ -1,0 +1,10 @@
+Ajoute dans ce dossier :
+
+- affiche-1.jpg
+- affiche-2.jpg
+- affiche-3.jpg
+- affiche-4.jpg
+- affiche-5.jpg
+- affiche-6.jpg
+
+Les images apparaitront automatiquement dans les cartes du portfolio.
