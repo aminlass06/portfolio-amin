@@ -876,3 +876,121 @@ footer {
   display: block;
   object-fit: cover;
 }
+
+.project-gallery {
+  position: relative;
+}
+
+.gallery-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gallery-stage {
+  position: relative;
+}
+
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+#card7-1:checked ~ .gallery-stage .slide-1,
+#card7-2:checked ~ .gallery-stage .slide-2 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gallery-controls {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  pointer-events: none;
+}
+
+#card7-1:checked ~ .gallery-stage .controls-1,
+#card7-2:checked ~ .gallery-stage .controls-2 {
+  display: flex;
+}
+
+.gallery-controls label {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 28px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.zoom-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.zoom-gallery {
+  position: relative;
+  width: min(570px, 57vh);
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #111;
+}
+
+.zoom-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+#zoom7-1:checked ~ .zoom-gallery .zoom-image-1,
+#zoom7-2:checked ~ .zoom-gallery .zoom-image-2 {
+  opacity: 1;
+}
+
+.zoom-controls {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  pointer-events: none;
+}
+
+#zoom7-1:checked ~ .zoom-gallery .zoom-controls-1,
+#zoom7-2:checked ~ .zoom-gallery .zoom-controls-2 {
+  display: flex;
+}
+
+.zoom-controls label {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+}
